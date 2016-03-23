@@ -20,18 +20,66 @@ System.register("app", ['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             App = (function () {
                 function App() {
-                    this.version = "0.0.1";
                 }
                 App = __decorate([
                     core_1.Component({
                         selector: 'core-app',
-                        templateUrl: 'app.html'
+                        templateUrl: 'components/app.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], App);
                 return App;
             }());
             exports_1("App", App);
+        }
+    }
+});
+System.register("info", ['angular2/core'], function(exports_2, context_2) {
+    "use strict";
+    var __moduleName = context_2 && context_2.id;
+    var core_2;
+    var Info;
+    return {
+        setters:[
+            function (core_2_1) {
+                core_2 = core_2_1;
+            }],
+        execute: function() {
+            Info = (function () {
+                function Info() {
+                    this.version = "0.0.1";
+                }
+                Info = __decorate([
+                    core_2.Component({
+                        selector: "about-info",
+                        templateUrl: "components/about.html"
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], Info);
+                return Info;
+            }());
+            exports_2("Info", Info);
+        }
+    }
+});
+System.register("main", ['angular2/platform/browser', "app", "info"], function(exports_3, context_3) {
+    "use strict";
+    var __moduleName = context_3 && context_3.id;
+    var browser_1, app_1, info_1;
+    return {
+        setters:[
+            function (browser_1_1) {
+                browser_1 = browser_1_1;
+            },
+            function (app_1_1) {
+                app_1 = app_1_1;
+            },
+            function (info_1_1) {
+                info_1 = info_1_1;
+            }],
+        execute: function() {
+            browser_1.bootstrap(app_1.App);
+            browser_1.bootstrap(info_1.Info);
         }
     }
 });

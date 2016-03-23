@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "xcopy": "for /r .\\_App %f in (*.html) do @copy \"%f\" components /y",
       "tsc": "tsc",
       "tsc:w": "tsc -w",
       "lite": "lite-server",
       "typings": "typings",
       "postinstall": "typings install" ,
-      "start": "concurrent \"npm run rsc:w\" \"npm run lite\" "
+      "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
   },
   "repository": {
     "type": "git",
@@ -23,13 +24,13 @@
   },
   "homepage": "https://github.com/dagilleland/ang2x#readme",
   "dependencies": {
-    "angular2": "^2.0.0-beta.11",
+    "angular2": "2.0.0-beta.11",
     "systemjs": "0.19.22",
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.33.13",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
-    "zone.js": "0.5.15"
+    "zone.js": "0.5.13"
   },
   "devDependencies": {
     "typescript": "^1.8.9",
