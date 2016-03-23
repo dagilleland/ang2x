@@ -1,0 +1,40 @@
+{
+  "name": "ang2x",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "tsc": "tsc",
+      "tsc:w": "tsc -w",
+      "lite": "lite-server",
+      "typings": "typings",
+      "postinstall": "typings install" ,
+      "start": "concurrent \"npm run rsc:w\" \"npm run lite\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagilleland/ang2x.git"
+  },
+  "author": "Daniel Gilleland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dagilleland/ang2x/issues"
+  },
+  "homepage": "https://github.com/dagilleland/ang2x#readme",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.11",
+    "systemjs": "0.19.22",
+    "es6-promise": "^3.1.2",
+    "es6-shim": "^0.33.13",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.9",
+    "lite-server": "^2.1.0",
+    "typings": "^0.7.9",
+    "concurrently": "^2.0.0"
+  }
+}
