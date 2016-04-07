@@ -9,12 +9,12 @@
     <!-- IE required polyfills (from CDN), in this exact order -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
     <script src="https://npmcdn.com/angular2/es6/dev/src/testing/shims_for_IE.js"></script>   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.16/system-polyfills.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.25/system-polyfills.js"></script>
     <script src="https://code.angularjs.org/tools/system.js"></script>
     <script src="https://code.angularjs.org/tools/typescript.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.9/angular2-polyfills.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.9/Rx.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.9/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/angular2.dev.js"></script>
 
     <!-- 1.1. Load my pre-compiled scripts (generated from TypeScript) -->
     <script src="./scripts/app.js"></script>
@@ -23,8 +23,7 @@
       System.config({
         baseURL: '.',
         transpiler: 'typescript',
-        typescriptOptions: { emitDecoratorMetadata: true },
-        packages: {'app': {defaultExtension: 'ts'}}
+        typescriptOptions: { emitDecoratorMetadata: true }
       });
       System.import('app_bootstrap')
             .then(console.debug.bind(console), console.error.bind(console));
