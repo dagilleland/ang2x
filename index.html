@@ -22,7 +22,7 @@
         typescriptOptions: { emitDecoratorMetadata: true },
         packages: {'app': {defaultExtension: 'ts'}}
       });
-      System.import('main')
+      System.import('app_bootstrap')
             .then(null, console.error.bind(console));
     </script>
   </head>

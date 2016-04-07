@@ -97,7 +97,7 @@ System.register("info", ['angular2/core'], function(exports_2, context_2) {
         }
     }
 });
-System.register("main", ['angular2/platform/browser', "app", "info"], function(exports_3, context_3) {
+System.register("app_bootstrap", ['angular2/platform/browser', "app", "info"], function(exports_3, context_3) {
     "use strict";
     var __moduleName = context_3 && context_3.id;
     var browser_1, app_1, info_1;
