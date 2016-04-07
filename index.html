@@ -20,11 +20,10 @@
       System.config({
         baseURL: '.',
         transpiler: 'typescript',
-        typescriptOptions: { emitDecoratorMetadata: true },
-        packages: {'app': {defaultExtension: 'ts'}}
+        typescriptOptions: { emitDecoratorMetadata: true }
       });
-      System.import('./scripts/app_bootstrap')
-            .then(null, console.error.bind(console));
+      System.import('app_bootstrap')
+            .then(console.debug.bind(console), console.error.bind(console));
     </script>
   </head>
 <body>
