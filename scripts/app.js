@@ -11,22 +11,57 @@ System.register("app", ['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var core_1;
-    var App;
+    var Hello, App;
+    function compileToComponent(template, directives) {
+        var FakeComponent = (function () {
+            function FakeComponent() {
+            }
+            FakeComponent = __decorate([
+                core_1.Component({
+                    selector: 'fake',
+                    template: template, directives: directives
+                }), 
+                __metadata('design:paramtypes', [])
+            ], FakeComponent);
+            return FakeComponent;
+        }());
+        ;
+        return FakeComponent;
+    }
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            App = (function () {
-                function App() {
+            Hello = (function () {
+                function Hello() {
                 }
+                Hello = __decorate([
+                    core_1.Component({
+                        selector: 'hello',
+                        template: '<h1>Hello, Angular!</h1>'
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], Hello);
+                return Hello;
+            }());
+            App = (function () {
+                function App(loader, elementRef) {
+                    this.loader = loader;
+                    this.elementRef = elementRef;
+                }
+                App.prototype.ngOnInit = function () {
+                    var someDynamicHtml = "<hello></hello><h2>" + Date.now() + "</h2>";
+                    this.loader.loadIntoLocation(compileToComponent(someDynamicHtml, [Hello]), this.elementRef, 'container');
+                };
                 App = __decorate([
                     core_1.Component({
                         selector: 'core-app',
-                        templateUrl: 'components/app.html'
+                        templateUrl: 'components/app.html',
+                        directives: [Hello]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.DynamicComponentLoader, core_1.ElementRef])
                 ], App);
                 return App;
             }());

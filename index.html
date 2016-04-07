@@ -3,6 +3,7 @@
   <head>
     <title>Angular 2 Hello World</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
     <!--<link rel="stylesheet" href="styles/styles.css">-->
     <!-- 1. Load libraries -->
     <!-- IE required polyfills (from CDN), in this exact order -->
@@ -29,6 +30,12 @@
     <h1>Help!</h1>
     <core-app></core-app>
     <about-info></about-info>
+    <div id="target"></div>
     <script src="./scripts/app.js"></script>
+    <script>
+         $(function() {
+             $("#target").load("loadMe.html");
+         });
+    </script>
 </body>
 </html>
